@@ -16,11 +16,11 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <div class = "container">
-          <div class = "row">
-            <div class = "col">
-              <div class="card text-center">
-                <div class="card-body">
+        <div className = "container">
+          <div className = "row">
+            <div className = "col">
+              <div className="card text-center">
+                <div className="card-body">
 
                 <Routes>
 
