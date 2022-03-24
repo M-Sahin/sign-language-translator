@@ -1,4 +1,5 @@
 import React from 'react'
+import translationUpdateApi from './translation.jsx'
 
 function Translation() {
 
@@ -9,9 +10,15 @@ function Translation() {
     const translate = event =>{
 
         let currentText = textInput.current.value
+
         let splitText = currentText.replace(/ /g, "").split('')
+
         setLetters(splitText)
+
+        translationUpdateApi(currentText)
+
     }
+    
 
     return (
         <div>
@@ -22,6 +29,7 @@ function Translation() {
             </div>
 
             <div id = 'handSigns'>
+
                 {letters.map((letter)=>{
                     return <img  src={require('../../assets/handSigns/' + letter + '.png')} /> 
                 }
