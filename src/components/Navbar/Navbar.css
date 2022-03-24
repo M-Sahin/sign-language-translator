@@ -1,0 +1,40 @@
+.navbar {
+	background-color: #ffc75f !important;
+}
+
+.navbar-link {
+	text-decoration: none;
+}
+
+.navbar-text {
+	font-family: "Love Ya Like A Sister", cursive;
+	color: #fafafa;
+	font-size: 32px !important;
+}
+
+.user-button {
+	display: flex;
+	align-items: center;
+	color: #fafafa !important;
+}
+
+.user-button:focus {
+	box-shadow: none !important;
+}
+
+.user-button:hover {
+	color: #efefef !important;
+}
+
+.user-button-text {
+	padding-right: 10px;
+}
+
+.logout-button {
+	align-items: center;
+	color: #fafafa !important;
+}
+
+.logout-button:hover {
+	color: #efefef !important;
+}
