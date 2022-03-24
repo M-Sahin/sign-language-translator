@@ -1,7 +1,13 @@
 import React from 'react'
 import translationUpdateApi from './translation.jsx'
+import { useDispatch, useSelector } from "react-redux";
+
 
 function Translation() {
+    
+    const { username, loggedIn } = useSelector(state => state.session);
+
+    console.log(username)
 
     const [letters, setLetters] = React.useState([])
 
@@ -31,7 +37,7 @@ function Translation() {
             <div id = 'handSigns'>
 
                 {letters.map((letter)=>{
-                    return <img  src={require('../../assets/handSigns/' + letter + '.png')} /> 
+                    return <img  src={require('../../../public/assets/handSigns/' + letter + '.png')} /> 
                 }
 
                 )}

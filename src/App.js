@@ -4,6 +4,7 @@ import Register from "./components/Register/Register";
 import Profile from "./components/Profile/Profile";
 import NotFound from "./components/NotFound/NotFound";
 import Navbar from "./components/Navbar/Navbar";
+import Translation from "./components/Translate/translationView";
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 					<Route path="/register" element={<Register />} />
 					<Route path="/profile" element={<Profile />} />
 					<Route path="*" element={<NotFound />} />
+					<Route path="/translate" element={<Translation />} />
 				</Routes>
 			</div>
 		</BrowserRouter>
