@@ -4,10 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 
 
 function Translation() {
+    const { username, id } = useSelector(state => state.session);
     
-    const { username, loggedIn } = useSelector(state => state.session);
-
-    console.log(username)
+    console.log(id)
 
     const [letters, setLetters] = React.useState([])
 
@@ -21,7 +20,7 @@ function Translation() {
 
         setLetters(splitText)
 
-        translationUpdateApi(currentText)
+        translationUpdateApi(currentText, id)
 
     }
     
