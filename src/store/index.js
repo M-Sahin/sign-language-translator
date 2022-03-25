@@ -1,5 +1,5 @@
 import { createStore } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension/logOnlyInProduction";
+import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 import rootReducer from "./reducers";
 import rootMiddleware from "./middleware";
 
