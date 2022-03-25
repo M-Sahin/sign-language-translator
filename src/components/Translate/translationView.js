@@ -1,5 +1,5 @@
 import React from 'react'
-import translationUpdateApi from './translation.jsx'
+import translationUpdateApi from './translation.js'
 import { useDispatch, useSelector } from "react-redux";
 
 
