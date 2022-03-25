@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { translationClearAction } from "../../store/actions/translationActions";
 import ProfileSummary from "./ProfileSummary";
 
+
 // profile view, route "/profile"
 const Profile = () => {
 	const dispatch = useDispatch();
@@ -13,14 +14,31 @@ const Profile = () => {
 
 	// event handler for the 'clear translation history' button
 	const onClearTranslationsClick = () => {
-		// dispatch the clear action, payload has to have the translations along with the user id
-		dispatch(
-			translationClearAction({
-				translations: translations,
-				id: id,
+		console.log("just give it a moment...")
+
+		const apiKey = 'T/wnxnVqkS3YQnMBM70eag=='
+
+		fetch(`https://mm-assignment-api.herokuapp.com/translations/` + String(id), {
+			method: 'PATCH', // NB: Set method to PATCH
+			headers: {
+			  'X-API-Key': apiKey,
+			  'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				// Provide new highScore to add to user with id 1
+				translations: []
 			})
-		);
-	};
+			})
+			.then(response => {
+			  if (!response.ok) {
+				throw new Error('Could not update')
+			  }
+			  console.log("done!")
+			})
+
+			
+
+		};
 
 	return (
 		<div className="Profile">
@@ -29,6 +47,7 @@ const Profile = () => {
 				username={username}
 				translations={translations}
 				onClearTranslationsClick={onClearTranslationsClick}
+				id = {id}
 			/>
 		</div>
 	);

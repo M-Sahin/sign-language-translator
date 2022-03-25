@@ -1,11 +1,14 @@
 import { useDispatch } from "react-redux";
 import AppContainer from "../../hoc/AppContainer";
 import { sessionLogoutAction } from "../../store/actions/sessionActions";
+import React from 'react'
 
+let userTranslations
 const ProfileSummary = ({
 	username,
 	translations,
 	onClearTranslationsClick,
+	id
 }) => {
 	const dispatch = useDispatch();
 
@@ -20,6 +23,12 @@ const ProfileSummary = ({
 		.filter(t => t.deleted === false)
 		.slice(-10)
 		.reverse();
+		const [translationz, setTranslations] = React.useState([])
+
+	   fetch('https://mm-assignment-api.herokuapp.com/translations/' + id)
+		.then(res => res.json())
+		.then(data => setTranslations(data.translations))
+
 
 	return (
 		<div className="ProfileSummary">
@@ -45,18 +54,10 @@ const ProfileSummary = ({
 
 					<div className="profile-history mt-3 p-3">
 						<h3>Translation history</h3>
-						<ul className="list-group list-group-flush pt-3">
-							{filteredAndSlicedTranslations.map((translationObject, index) => {
-								return (
-									<li
-										className="list-group-item"
-										key={translationObject.translation + index}
-									>
-										{translationObject.translation}
-									</li>
-								);
-							})}
-						</ul>
+						{translationz.map((translation, index)=>{
+							if(index < 10){
+								return <li>{index + 1} {translation}</li>
+							}})}
 					</div>
 				</div>
 			</AppContainer>

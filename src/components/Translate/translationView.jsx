@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 
 function Translation() {
+    
     const { username, id } = useSelector(state => state.session);
     
     console.log(id)
