@@ -1,44 +1,82 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# Sign Language Translator
 
-## Available Scripts
+![GitHub repo size](https://img.shields.io/github/repo-size/M-sahin/sign-language-translator)
 
-In the project directory, you can run:
 
-### `npm start`
+[Live Demo](https://mm-sign-language-translator.herokuapp.com/) (Hosted on _Heroku_)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[REST API](https://mm-assignment-api.herokuapp.com/translations) (Hosted on _Heroku_)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[Assignment PDF](https://lms.noroff.no/pluginfile.php/184846/mod_assign/introattachment/0/Assignment_React_Lost%20in%20Translation.pdf?forcedownload=1)
 
-### `npm test`
+## Table of Contents
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [General Information](#general-information)
 
-### `npm run build`
+- [Technologies and Resources](#technologies-and-resources)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Installation and Usage](#installation-and-usage)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- [Contributors](#contributors)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## General Information
 
-### `npm run eject`
+**Login/Register view**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+NOTE: User cannot see these views if _logged in_
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The user starts in the log in view and has to enter his username. If the username does not exist, an error is shown and the user is asked to register a new username using the provided button.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Translate view**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+NOTE: User cannot see this view if _not logged in_
 
-## Learn More
+In this screen, the user can input various words which will then be translated in to sign language. Aditionally, these translations will be added to the user's profile page and also uploaded to the API.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Profile view**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+NOTE: User cannot see this view if _not logged in_
+
+In the profile screen, the user is shown a history of translations. Here, there are two buttons, one for clearing the translation history (will also be deleted from the API), and one button for logging out, which will take the user back to the home screen.
+
+## Technologies and Resources
+
+The project is implemented using the following technologies and resources:
+
+- React
+- Redux (with devtools extension)
+- React Router
+- Bootstrap
+- Material Icons
+
+**NB!** The code used for the redux setup along with the templates for basic login, register and session related actions, reducers and middleware were replicated from the [example project](https://gitlab.com/sumodevelopment/react-txt-forum-client) created by Dewald Els.
+
+## Installation and Usage
+
+**NOTE:** You will need _node_ and _npm_ installed on your machine
+
+1. Clone the project repository:
+
+```sh
+git clone https://github.com/M-sahin/sign-language-translator.git
+```
+
+2. Install the dependencies while inside the project directory:
+
+```sh
+npm install
+```
+
+3. Start the server:
+
+```sh
+npm start
+```
+
+After starting the server, your browser should automatically lauch the application but you can also access it manually by navigating to `localhost:3000` on your browser.
+
+## Contributors
+
+[Murat Sahin (@M-sahin)](https://github.com/m-sahin)
+
+[Mehmet Balci (@mehmet70)](https://github.com/mehmet70)
