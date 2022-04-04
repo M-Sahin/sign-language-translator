@@ -7,9 +7,7 @@
 
 [REST API](https://mm-assignment-api.herokuapp.com/translations) (Hosted on _Heroku_)
 
-[Assignment PDF](https://lms.noroff.no/pluginfile.php/184862/mod_assign/introattachment/0/Angular_Pokemon%20Trainer.pdf?forcedownload=1)
-
-This is a simple app in which the user can catch Pokemon! The app is made with Angular.
+[Assignment PDF](https://lms.noroff.no/pluginfile.php/184846/mod_assign/introattachment/0/Assignment_React_Lost%20in%20Translation.pdf?forcedownload=1)
 
 ## Table of Contents
 
@@ -23,27 +21,35 @@ This is a simple app in which the user can catch Pokemon! The app is made with A
 
 ## General Information
 
-**Login view**
+**Login/Register view**
 
-The user starts in the log in view and has to enter his username. The username is stored in sessionstorage and the API.
+NOTE: User cannot see these views if _logged in_
 
-**Catalogue view**
+The user starts in the log in view and has to enter his username. If the username does not exist, an error is shown and the user is asked to register a new username using the provided button.
 
-In this screen, the user is shown a catalogue with all the pokemons from the [Pokemon API](https://pokeapi.co/). Here, the user can 'catch' these pokemons.
+**Translate view**
 
-**Trainer view**
+NOTE: User cannot see this view if _not logged in_
 
-In the trainer view, the user is shown the pokemons that are catched. These pokemons are stored in sessionstorage and the API. Here, the user can decide to release the pokemons back in to the wild. 
+In this screen, the user can input various words which will then be translated in to sign language. Aditionally, these translations will be added to the user's profile page and also uploaded to the API.
+
+**Profile view**
+
+NOTE: User cannot see this view if _not logged in_
+
+In the profile screen, the user is shown a history of translations. Here, there are two buttons, one for clearing the translation history (will also be deleted from the API), and one button for logging out, which will take the user back to the home screen.
 
 ## Technologies and Resources
 
 The project is implemented using the following technologies and resources:
 
-- Angular
-- Angular Router
-- Express
+- React
+- Redux (with devtools extension)
+- React Router
 - Bootstrap
 - Material Icons
+
+**NB!** The code used for the redux setup along with the templates for basic login, register and session related actions, reducers and middleware were replicated from the [example project](https://gitlab.com/sumodevelopment/react-txt-forum-client) created by Dewald Els.
 
 ## Installation and Usage
 
@@ -52,7 +58,7 @@ The project is implemented using the following technologies and resources:
 1. Clone the project repository:
 
 ```sh
-git clone https://github.com/M-sahin/pokemon-trainer.git
+git clone https://github.com/M-sahin/sign-language-translator.git
 ```
 
 2. Install the dependencies while inside the project directory:
@@ -64,10 +70,10 @@ npm install
 3. Start the server:
 
 ```sh
-ng serve
+npm start
 ```
 
-After starting the server, your browser should automatically lauch the application but you can also access it manually by navigating to `localhost:4200` on your browser.
+After starting the server, your browser should automatically lauch the application but you can also access it manually by navigating to `localhost:3000` on your browser.
 
 ## Contributors
 
